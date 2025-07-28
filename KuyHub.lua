@@ -13,7 +13,7 @@ local Window = OrionLib:MakeWindow({
     HidePremium = false,
     SaveConfig = true,
     ConfigFolder = "KuyHubConfig",
-    Icon = "" -- Kosongkan agar tidak error
+    Icon = "https://raw.githubusercontent.com/Aryainimah/KuyHub/main/Icon/kuyhub_icon.png" -- Icon GUI baru
 })
 
 local TabMain = Window:MakeTab({ Name = "Main", Icon = "💥", PremiumOnly = false })
