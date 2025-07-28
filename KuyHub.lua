@@ -1,10 +1,6 @@
+return function(Settings)
 -- Kuy Hub (RedHub Modded by Arya)
 -- Fitur: Join Team, Translator, Super Fast Attack, Mirage Gear Farm + ESP, Auto Quest, Auto Raid, Auto Stats, Teleport, Safe Mode, ESP Chest, ESP Fruit, Auto Haki, Auto Enhance, No Clip, Auto Kill Aura, Auto Boss, Auto Boat ESP, Safe Mode
-
-local Settings = {
-    JoinTeam = "Pirates", -- "Pirates" or "Marines"
-    Translator = true,
-}
 
 -- GUI Setup (RedHub-style dengan tambahan tab)
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
@@ -13,7 +9,7 @@ local Window = OrionLib:MakeWindow({
     HidePremium = false,
     SaveConfig = true,
     ConfigFolder = "KuyHubConfig",
-    Icon = "https://raw.githubusercontent.com/Aryainimah/KuyHub/main/Icon/kuyhub_icon.png" -- Icon GUI baru
+    Icon = "https://raw.githubusercontent.com/Aryainimah/KuyHub/main/Icon/kuyhub_icon.png"
 })
 
 local TabMain = Window:MakeTab({ Name = "Main", Icon = "💥", PremiumOnly = false })
@@ -88,56 +84,4 @@ TabRaid:AddToggle({
     Default = false,
     Callback = function(v)
         while v and task.wait(10) do
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Raids", "Start")
-        end
-    end
-})
-TabMisc:AddToggle({
-    Name = "Boat ESP",
-    Default = false,
-    Callback = function(v)
-        while v and task.wait(3) do
-            for _,boat in pairs(workspace.Boats:GetChildren()) do
-                if boat:FindFirstChild("Hull") and not boat:FindFirstChild("ESP") then
-                    local esp = Instance.new("BillboardGui", boat.Hull)
-                    esp.Name = "ESP"
-                    esp.Size = UDim2.new(0,100,0,40)
-                    esp.AlwaysOnTop = true
-                    local label = Instance.new("TextLabel", esp)
-                    label.Size = UDim2.new(1,0,1,0)
-                    label.BackgroundTransparency = 1
-                    label.Text = "🚤 Boat"
-                    label.TextColor3 = Color3.new(1,1,1)
-                    label.TextScaled = true
-                end
-            end
-        end
-    end
-})
-TabMisc:AddToggle({
-    Name = "Safe Mode",
-    Default = false,
-    Callback = function(val)
-        while val and task.wait(1) do
-            game.Players.LocalPlayer.Character.Humanoid.Health = math.huge
-        end
-    end
-})
-
-OrionLib:Init()
-
--- Tambahkan fitur draggable ke GUI utama setelah muncul
--- Ini penting agar GUI bisa digeser
-
-spawn(function()
-    task.wait(2)
-    local CoreGui = game:GetService("CoreGui")
-    local OrionUI = CoreGui:FindFirstChild("Orion") or CoreGui:WaitForChild("Orion")
-    if OrionUI then
-        local MainFrame = OrionUI:FindFirstChild("Main") or OrionUI:FindFirstChildWhichIsA("Frame")
-        if MainFrame then
-            MainFrame.Active = true
-            MainFrame.Draggable = true
-        end
-    end
-end)
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("_
