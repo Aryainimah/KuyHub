@@ -12,15 +12,16 @@ local Window = OrionLib:MakeWindow({
     Name = "Kuy Hub - RedHub Inspired",
     HidePremium = false,
     SaveConfig = true,
-    ConfigFolder = "KuyHubConfig"
+    ConfigFolder = "KuyHubConfig",
+    Icon = "rbxassetid://8561351817" -- Ikon emoji (🚀 Rocket)
 })
 
-local TabMain = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false })
-local TabMisc = Window:MakeTab({ Name = "Misc", Icon = "rbxassetid://4483345998", PremiumOnly = false })
-local TabFarm = Window:MakeTab({ Name = "Auto Farm", Icon = "rbxassetid://4483345998", PremiumOnly = false })
-local TabRaid = Window:MakeTab({ Name = "Raids", Icon = "rbxassetid://4483345998", PremiumOnly = false })
-local TabTP = Window:MakeTab({ Name = "Teleport", Icon = "rbxassetid://4483345998", PremiumOnly = false })
-local TabStats = Window:MakeTab({ Name = "Stats", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+local TabMain = Window:MakeTab({ Name = "Main", Icon = "rbxassetid://8561351817", PremiumOnly = false })
+local TabMisc = Window:MakeTab({ Name = "Misc", Icon = "rbxassetid://8561351817", PremiumOnly = false })
+local TabFarm = Window:MakeTab({ Name = "Auto Farm", Icon = "rbxassetid://8561351817", PremiumOnly = false })
+local TabRaid = Window:MakeTab({ Name = "Raids", Icon = "rbxassetid://8561351817", PremiumOnly = false })
+local TabTP = Window:MakeTab({ Name = "Teleport", Icon = "rbxassetid://8561351817", PremiumOnly = false })
+local TabStats = Window:MakeTab({ Name = "Stats", Icon = "rbxassetid://8561351817", PremiumOnly = false })
 
 -- Auto Join Team
 TabMain:AddButton({
