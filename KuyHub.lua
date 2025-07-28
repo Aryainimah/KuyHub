@@ -125,3 +125,19 @@ TabMisc:AddToggle({
 })
 
 OrionLib:Init()
+
+-- Tambahkan fitur draggable ke GUI utama setelah muncul
+-- Ini penting agar GUI bisa digeser
+
+spawn(function()
+    task.wait(2)
+    local CoreGui = game:GetService("CoreGui")
+    local OrionUI = CoreGui:FindFirstChild("Orion") or CoreGui:WaitForChild("Orion")
+    if OrionUI then
+        local MainFrame = OrionUI:FindFirstChild("Main") or OrionUI:FindFirstChildWhichIsA("Frame")
+        if MainFrame then
+            MainFrame.Active = true
+            MainFrame.Draggable = true
+        end
+    end
+end)
